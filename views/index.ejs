@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Oyun İndirme Merkezi</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Mevcut Oyunlar</h1>
+    <div class="oyun-listesi">
+        <% oyunlar.forEach(oyun => { %>
+            <div class="oyun-kart">
+                <h3><%= oyun.isim %></h3>
+                <p><strong>Boyut:</strong> <%= oyun.boyut %></p>
+                <!-- Doğrudan tetiklenen sayaçlı link -->
+                <a href="/indir/<%= oyun.id %>" class="btn-indir">İndir</a>
+            </div>
+        <% }) %>
+    </div>
+</body>
+</html>
