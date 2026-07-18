@@ -1,15 +1,13 @@
 {
   "name": "railway-oyun-sitesi",
-  "version": "1.0.0",
-  "description": "Oyun indirme ve sayaçlı admin paneli sitesi",
+  "version": "1.1.0",
+  "description": "Oyun indirme, silme ve sayaçlı admin paneli sitesi",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
   "dependencies": {
-    "ejs": "^3.1.10",
     "express": "^4.19.2",
-    "express-session": "^1.18.0",
-    "sqlite3": "^5.1.7"
+    "express-session": "^1.18.0"
   }
 }
