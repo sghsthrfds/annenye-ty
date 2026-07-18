@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Paneli</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Admin Yönetim Paneli</h1>
+    <a href="/admin/cikis">Güvenli Çıkış</a>
+    
+    <h2>Yeni Oyun Ekle</h2>
+    <form action="/admin/ekle" method="POST">
+        <input type="text" name="isim" placeholder="Oyun Adı" required><br><br>
+        <input type="text" name="boyut" placeholder="Boyut (Örn: 1.5 GB)" required><br><br>
+        <input type="url" name="link" placeholder="Doğrudan İndirme Linki" required><br><br>
+        <button type="submit">Oyunu Sisteme Ekle</button>
+    </form>
+
+    <h2>Oyunlar ve İndirme İstatistikleri</h2>
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Oyun Adı</th>
+                <th>Boyut</th>
+                <th>İndirme Sayısı (Tıklama)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% oyunlar.forEach(oyun => { %>
+                <tr>
+                    <td><%= oyun.isim %></td>
+                    <td><%= oyun.boyut %></td>
+                    <td><strong><%= oyun.indirme_sayisi %></strong> kez indirildi</td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</body>
+</html>
